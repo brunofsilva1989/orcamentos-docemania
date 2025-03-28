@@ -88,6 +88,8 @@ function gerarOrcamento() {
         (enderecoCliente ? `Endereço: ${enderecoCliente}\n` : '');
 
     document.getElementById('resumo').innerText = resumo;
+    document.getElementById('resumo').classList.add('animate__animated', 'animate__fadeIn');
+
 
     const textoWpp = encodeURIComponent("Olá! Gostaria de fazer um pedido de Páscoa:\n\n" + resumo);
     document.getElementById('linkWhatsapp').href = `https://wa.me/5511982865807?text=${textoWpp}`;
