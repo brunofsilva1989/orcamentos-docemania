@@ -1,37 +1,41 @@
-/* RESPONSIVO - Telas até 768px (celulares e tablets) */
+/* Responsivo: até 768px (celulares e tablets) */
 @media screen and (max-width: 768px) {
-    h1 {
-      font-size: 1.6rem;
-      text-align: center;
-    }
-  
-    .form-section,
-    #resumo {
-      width: 95%;
-      margin: 0 auto;
-      text-align: left;
-    }
-  
-    .btn,
-    .btn-custom {
-      width: 100%;
-      margin-top: 10px;
-    }
-  
-    .modal-dialog {
-      margin: 1.5rem auto;
-    }
-  
-    footer {
-      font-size: 13px;
-      text-align: center;
-    }
+  body,
+  h1,
+  h2,
+  .form-section,
+  #resumo,
+  footer {
+    text-align: center;
   }
 
-  @media screen and (max-width: 480px) {
-    h1 {
-      font-size: 1.3rem;
-    }
+  .form-section,
+  #resumo {
+    width: 95%;
+    margin: 0 auto;
   }
-  
-  
+
+  .btn,
+  .btn-custom,
+  #linkWhatsapp,
+  .btn-secondary {
+    width: 90%;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .modal-dialog {
+    margin: 1.5rem auto;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+}
