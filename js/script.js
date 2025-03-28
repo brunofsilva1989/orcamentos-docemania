@@ -45,7 +45,7 @@ document.getElementById('tipoOvo').addEventListener('change', function () {
 function carregarRecheios(tipo) {
     const recheiosDiv = document.getElementById('recheios');
     recheiosDiv.innerHTML = '';
-    const lista = tipo === 'colher' ? recheiosColher : recheiosTrufado;
+    let lista = recheiosColher; // mostrar os mesmos recheios em ambos os tipos
     lista.forEach((r, index) => {
         recheiosDiv.innerHTML += `
             <input type="radio" class="form-check-input" name="recheio" id="r${index}" value="${r}">
