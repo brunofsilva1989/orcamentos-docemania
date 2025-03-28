@@ -1,0 +1,22 @@
+body {
+    background-color: #fff8f0;
+}
+
+h1 {
+    color: #d2691e;
+    margin-bottom: 30px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.btn-custom {
+    background-color: #d2691e;
+    color: white;
+    border: none;
+}
+
+.btn-custom:hover {
+    background-color: #a0522d;
+}

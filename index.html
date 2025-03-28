@@ -1,160 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orçamento Páscoa - Doce Mania</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { background-color: #fff8f0; }
-    h1 { color: #d2691e; margin-bottom: 30px; }
-    .form-section { margin-bottom: 20px; }
-    .btn-custom { background-color: #d2691e; color: white; border: none; }
-    .btn-custom:hover { background-color: #a0522d; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Páscoa - Doce Mania</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="container py-5">
-  <h1 class="text-center">Monte seu Ovo de Páscoa 🍫</h1>
+    <h1 class="text-center">Monte seu Ovo de Páscoa 🍫</h1>
 
-  <div class="form-section">
-    <label for="produto" class="form-label">Escolha o produto:</label>
-    <select id="produto" class="form-select" onchange="atualizarTipoOvo()">
-      <option value="">-- Selecione --</option>
-      <option value="ovo">Ovo de Páscoa</option>
-      <option value="barra">Barra de Chocolate</option>
-    </select>
-  </div>
+        <div class="form-section">
+            <label for="produto" class="form-label">Escolha o produto:</label>
+            <select id="produto" class="form-select" onchange="atualizarTipoOvo()">
+                <option value="">-- Selecione --</option>
+                <option value="ovo">Ovo de Páscoa</option>
+                <option value="barra">Barra de Chocolate</option>
+            </select>
+        </div>
 
-  <div id="tipoOvoSection" class="form-section" style="display:none;">
-    <label for="tipoOvo" class="form-label">Tipo de Ovo:</label>
-    <select id="tipoOvo" class="form-select">
-      <option value="">-- Selecione --</option>
-      <option value="trufado">Trufado</option>
-      <option value="colher">De Colher</option>
-    </select>
-  </div>
+        <div id="tipoOvoSection" class="form-section" style="display:none;">
+            <label for="tipoOvo" class="form-label">Tipo de Ovo:</label>
+            <select id="tipoOvo" class="form-select">
+                <option value="">-- Selecione --</option>
+                <option value="trufado">Trufado</option>
+                <option value="colher">De Colher</option>
+            </select>
+        </div>
 
-  <div id="pesoSection" class="form-section" style="display:none;">
-    <label for="peso" class="form-label">Peso:</label>
-    <select id="peso" class="form-select">
-      <option value="">-- Selecione --</option>
-      <option value="250">250g</option>
-      <option value="500">500g</option>
-      <option value="1000">1kg</option>
-    </select>
-  </div>
+        <div id="pesoSection" class="form-section" style="display:none;">
+            <label for="peso" class="form-label">Peso:</label>
+            <select id="peso" class="form-select">
+                <option value="">-- Selecione --</option>
+                <option value="250">250g</option>
+                <option value="500">500g</option>
+                <option value="1000">1kg</option>
+            </select>
+        </div>
 
-  <div id="recheiosSection" class="form-section" style="display:none;">
-    <label class="form-label">Recheios:</label>
-    <div id="recheios" class="form-check"></div>
-  </div>
+        <div id="recheiosSection" class="form-section" style="display:none;">
+            <label class="form-label">Recheios:</label>
+            <div id="recheios" class="form-check"></div>
+        </div>
 
-  <div id="adicionaisSection" class="form-section" style="display:none;">
-    <label class="form-label">Adicionais (+R$10 cada):</label>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" value="Kinder Bueno" id="kinder">
-      <label class="form-check-label" for="kinder">Kinder Bueno</label><br>
-      <input type="checkbox" class="form-check-input" value="Ferrero Rocher" id="ferrero">
-      <label class="form-check-label" for="ferrero">Ferrero Rocher</label><br>
-      <input type="checkbox" class="form-check-input" value="M&Ms" id="mms">
-      <label class="form-check-label" for="mms">M&Ms</label><br>
-      <input type="checkbox" class="form-check-input" value="Ovomaltine" id="ovomaltine">
-      <label class="form-check-label" for="ovomaltine">Ovomaltine</label><br>
-      <input type="checkbox" class="form-check-input" value="Nutella" id="nutella">
-      <label class="form-check-label" for="nutella">Nutella</label><br>
-      <input type="checkbox" class="form-check-input" value="Frutas" id="frutas">
-      <label class="form-check-label" for="frutas">Frutas</label>
-    </div>
-  </div>
+        <div id="adicionaisSection" class="form-section" style="display:none;">
+            <label class="form-label">Adicionais (+R$10 cada):</label>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" value="Kinder Bueno" id="kinder">
+                <label class="form-check-label" for="kinder">Kinder Bueno</label><br>
+                <input type="checkbox" class="form-check-input" value="Ferrero Rocher" id="ferrero">
+                <label class="form-check-label" for="ferrero">Ferrero Rocher</label><br>
+                <input type="checkbox" class="form-check-input" value="M&Ms" id="mms">
+                <label class="form-check-label" for="mms">M&Ms</label><br>
+                <input type="checkbox" class="form-check-input" value="Ovomaltine" id="ovomaltine">
+                <label class="form-check-label" for="ovomaltine">Ovomaltine</label><br>
+                <input type="checkbox" class="form-check-input" value="Nutella" id="nutella">
+                <label class="form-check-label" for="nutella">Nutella</label><br>
+                <input type="checkbox" class="form-check-input" value="Frutas" id="frutas">
+                <label class="form-check-label" for="frutas">Frutas</label>
+            </div>
+        </div>
 
-  <button onclick="gerarOrcamento()" class="btn btn-custom mb-3">Gerar Orçamento</button>
+        <button onclick="gerarOrcamento()" class="btn btn-custom mb-3">Gerar Orçamento</button>
 
-  <div class="form-section">
-    <h2>Resumo:</h2>
-    <pre id="resumo" class="bg-light p-3 border"></pre>
-    <a id="linkWhatsapp" href="#" target="_blank" class="btn btn-success" style="display:none;">Enviar via WhatsApp</a>
-  </div>
+        <div class="form-section">
+            <h2>Resumo:</h2>
+            <pre id="resumo" class="bg-light p-3 border"></pre>
+            <a id="linkWhatsapp" href="#" target="_blank" class="btn btn-success" style="display:none;">Enviar via
+                WhatsApp</a>
+        </div>
 
-  <script>
-    const recheiosTrufado = ["Chocolate Tradicional", "Crocante", "Amendoim"];
-    const recheiosColher = ["Brigadeiro", "Prestígio", "Ninho", "Sensação", "Branco", "Doce de Leite", "Maracujá"];
+        <!--Area do Modal-->
+        <!-- Botão para abrir o modal -->
+        <button class="btn btn-secondary mb-3" data-bs-toggle="modal" data-bs-target="#modalCliente">
+            Preencher Dados da Cliente
+        </button>
 
-    function atualizarTipoOvo() {
-      const produto = document.getElementById('produto').value;
-      const tipoSection = document.getElementById('tipoOvoSection');
-      const pesoSection = document.getElementById('pesoSection');
-      const recheiosSection = document.getElementById('recheiosSection');
-      const adicionaisSection = document.getElementById('adicionaisSection');
+        <!-- Modal Bootstrap -->
+        <div class="modal fade" id="modalCliente" tabindex="-1" aria-labelledby="modalClienteLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="clienteForm">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalClienteLabel">Dados da Cliente</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Fechar"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefone" class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" id="telefone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="endereco" class="form-label">Endereço</label>
+                                <input type="text" class="form-control" id="endereco">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-      if (produto === 'ovo') {
-        tipoSection.style.display = 'block';
-        pesoSection.style.display = 'block';
-        recheiosSection.style.display = 'block';
-        adicionaisSection.style.display = 'block';
-        carregarRecheios('trufado'); // default
-      } else if (produto === 'barra') {
-        tipoSection.style.display = 'none';
-        pesoSection.style.display = 'block';
-        recheiosSection.style.display = 'none';
-        adicionaisSection.style.display = 'none';
-      } else {
-        tipoSection.style.display = 'none';
-        pesoSection.style.display = 'none';
-        recheiosSection.style.display = 'none';
-        adicionaisSection.style.display = 'none';
-      }
-    }
+        <!--Footer-->
+        <footer class="text-center py-4 mt-5" style="background-color: #f8e8dc; color: #5a2d0c;">
+            <div class="container">
+                <p class="mb-1">🍬 <strong>Doce Mania</strong> - Páscoa 2025</p>
+                <p class="mb-0">Entre em contato: <a href="https://wa.me/5511982865807" target="_blank"
+                        style="color: #5a2d0c; text-decoration: underline;">(11) 9 8286-5807</a></p>
+                <p class="mt-2 small">Desenvolvido com ❤️ por Jana Doces</p>
+            </div>
+        </footer>
 
-    document.getElementById('tipoOvo').addEventListener('change', function () {
-      carregarRecheios(this.value);
-    });
-
-    function carregarRecheios(tipo) {
-      const recheiosDiv = document.getElementById('recheios');
-      recheiosDiv.innerHTML = '';
-      let lista = tipo === 'colher' ? recheiosColher : recheiosTrufado;
-      lista.forEach((r, index) => {
-        recheiosDiv.innerHTML += `<input type="radio" class="form-check-input" name="recheio" id="r${index}" value="${r}"> <label class="form-check-label" for="r${index}">${r}</label><br>`;
-      });
-    }
-
-    function gerarOrcamento() {
-      const produto = document.getElementById('produto').value;
-      const tipo = document.getElementById('tipoOvo').value;
-      const peso = document.getElementById('peso').value;
-      const recheio = document.querySelector('input[name="recheio"]:checked')?.value || '';
-      const adicionais = [...document.querySelectorAll('#adicionaisSection input[type="checkbox"]:checked')].map(a => a.value);
-
-      let preco = 0;
-
-      if (produto === 'ovo') {
-        if (tipo === 'trufado') {
-          if (peso === '250') preco = 50;
-          else if (peso === '500') preco = 85;
-          else if (peso === '1000') preco = 140;
-        } else if (tipo === 'colher') {
-          if (peso === '250') preco = 45;
-          else if (peso === '500') preco = 70;
-          else if (peso === '1000') preco = 100;
-        }
-        preco += adicionais.length * 10;
-      } else if (produto === 'barra') {
-        preco = 28;
-      }
-
-      const resumo = `Produto: ${produto}\n` +
-                     (tipo ? `Tipo: ${tipo}\n` : '') +
-                     `Peso: ${peso}g\n` +
-                     (recheio ? `Recheio: ${recheio}\n` : '') +
-                     (adicionais.length ? `Adicionais: ${adicionais.join(', ')}\n` : '') +
-                     `Valor Total: R$${preco},00\n` +
-                     `Sinal (50%): R$${preco / 2},00`;
-
-      document.getElementById('resumo').innerText = resumo;
-      const textoWpp = encodeURIComponent("Olá, quero fazer este pedido de Páscoa:\n\n" + resumo);
-      document.getElementById('linkWhatsapp').href = `https://wa.me/5511982865807?text=${textoWpp}`;
-      document.getElementById('linkWhatsapp').style.display = 'inline-block';
-    }
-  </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
 </body>
+
 </html>
