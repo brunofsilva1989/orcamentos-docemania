@@ -24,6 +24,31 @@
         </select>
     </div>
 
+
+    <!-- Tipo de Chocolate -->
+    <div id="tipoChocolateSection" class="form-section" style="display:none;">
+        <label for="tipoChocolate" class="form-label">Tipo de Chocolate:</label>
+        <select id="tipoChocolate" class="form-select" onchange="mostrarVariacoes()">
+            <option value="">-- Selecione --</option>
+            <option value="preto">Chocolate Preto</option>
+            <option value="branco">Chocolate Branco (+R$15)</option>
+        </select>
+        <small id="alertaBranco" class="text-danger mt-1" style="display:none;">
+            ⚠️ Chocolate branco possui acréscimo de R$15,00
+        </small>
+    </div>
+
+    <!-- Variação do Chocolate Preto -->
+    <div id="variacaoChocolateSection" class="form-section" style="display:none;">
+        <label for="variacaoChocolate" class="form-label">Variação:</label>
+        <select id="variacaoChocolate" class="form-select">
+            <option value="">-- Selecione --</option>
+            <option value="tradicional">Tradicional</option>
+            <option value="crocante">Crocante</option>
+            <option value="amendoim">Amendoim</option>
+        </select>
+    </div>
+
     <!--Teste-->
 
     <div id="tipoOvoSection" class="form-section" style="display:none;">
@@ -43,6 +68,11 @@
             <option value="500">500g</option>
             <option value="1000">1kg</option>
         </select>
+    </div>
+
+    <div id="quantidadeSection" class="form-section" style="display:none;">
+        <label for="quantidade" class="form-label">Quantidade:</label>
+        <input type="number" id="quantidade" class="form-control" value="1" min="1">
     </div>
 
     <div id="recheiosSection" class="form-section" style="display:none;">
@@ -68,8 +98,17 @@
         </div>
     </div>
 
+    <div>
+        <!--Area do Modal-->
+        <!-- Botão para abrir o modal -->
+        <button class="boton-elegante mb-3" data-bs-toggle="modal" data-bs-target="#modalCliente">
+            Preencher Dados da Cliente
+        </button>
+    </div>
+
     <button onclick="gerarOrcamento()" class="boton-elegante mb-3 animate__animated animate__pulse">Gerar
         Orçamento</button>
+
 
     <div class="form-section">
         <h2>Resumo:</h2>
@@ -77,12 +116,6 @@
         <a id="linkWhatsapp" href="#" target="_blank" class="btn btn-success" style="display:none;">Enviar via
             WhatsApp</a>
     </div>
-
-    <!--Area do Modal-->
-    <!-- Botão para abrir o modal -->
-    <button class="boton-elegante mb-3" data-bs-toggle="modal" data-bs-target="#modalCliente">
-        Preencher Dados da Cliente
-    </button>
 
     <!-- Modal Bootstrap -->
     <div class="modal fade" id="modalCliente" tabindex="-1" aria-labelledby="modalClienteLabel" aria-hidden="true">
