@@ -29,6 +29,17 @@ h1 {
     background-color: #a0522d;
 }
 
+.destaque {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #b14a0b;
+    background-color: #fff3e0;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+
 /* From Uiverse.io by themrsami */ 
 
   

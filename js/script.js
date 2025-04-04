@@ -129,6 +129,41 @@ function gerarOrcamento() {
             preco += 15;
         }
 
+        if (!produto) {
+            Swal.fire('Atenção!', 'Você precisa selecionar um produto.', 'warning');
+            return;
+          }
+          
+          if (produto === 'ovo' && !document.getElementById('tipoOvo').value) {
+            Swal.fire('Atenção!', 'Selecione o tipo de ovo.', 'warning');
+            return;
+          }
+          
+          if (!peso) {
+            Swal.fire('Atenção!', 'Informe o peso do produto.', 'warning');
+            return;
+          }
+          
+          if (!tipoChocolate) {
+            Swal.fire('Atenção!', 'Selecione o tipo de chocolate.', 'warning');
+            return;
+          }
+          
+          if (tipoChocolate === 'preto' && !variacaoChocolate && produto !== 'barra') {
+            Swal.fire('Atenção!', 'Informe a variação do chocolate preto.', 'warning');
+            return;
+          }
+          
+          if (produto === 'ovo' && !document.querySelector('input[name="recheio"]:checked')) {
+            Swal.fire('Atenção!', 'Escolha um recheio.', 'warning');
+            return;
+          }
+          
+          if (!nomeCliente || !telefoneCliente) {
+            Swal.fire('Atenção!', 'Preencha os dados da cliente antes de gerar o orçamento.', 'warning');
+            return;
+          }
+          
         preco += adicionais.length * 10;
     } else if (produto === 'barra') {
         preco = 28;
@@ -156,4 +191,9 @@ function gerarOrcamento() {
     const textoWpp = encodeURIComponent("Olá! Gostaria de fazer um pedido de Páscoa:\n\n" + resumo);
     document.getElementById('linkWhatsapp').href = `https://wa.me/5511982865807?text=${textoWpp}`;
     document.getElementById('linkWhatsapp').style.display = 'inline-block';
+    Swal.fire({
+        icon: 'success',
+        title: 'Orçamento pronto!',
+        text: 'Você pode revisar os dados e clicar em "Enviar via WhatsApp".'
+      });      
 }
